@@ -113,7 +113,17 @@ TEST(polish,unarniy_minus) {
 TEST(polish, oshibka_skobok) {
 	ASSERT_ANY_THROW(Polish a("|1+(2|-3)"));
 }
+TEST(polish, minus2) {
+	Polish a("--2");
+	ASSERT_ANY_THROW(a.Culc());
+}
+TEST(polish, stepen) {
+	Polish a("2^2^3");
 
+	double res = a.Culc();
+
+	EXPECT_EQ(64, res);
+}
 int main(int ac, char* av[])
 {
 	testing::InitGoogleTest(&ac, av);
