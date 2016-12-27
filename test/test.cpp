@@ -113,6 +113,7 @@ TEST(polish,unarniy_minus) {
 TEST(polish, oshibka_skobok) {
 	ASSERT_ANY_THROW(Polish a("|1+(2|-3)"));
 }
+
 TEST(polish, minus2) {
 	Polish a("--2");
 	ASSERT_ANY_THROW(a.Culc());
